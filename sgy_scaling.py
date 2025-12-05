@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-SGY Scaling Tool - Ultra Fast Multicore Version
+SGY Scaling Tool
 ------------------------------------------------
 This script normalizes all SEG-Y (.sgy) seismic files in a given input folder
 by dividing each trace by the global maximum amplitude across all files.
-Uses multiprocessing for maximum speed.
+Uses multiprocessing.
 """
 import os
 from obspy import read
@@ -17,7 +17,7 @@ import numpy as np
 # -------------------------
 INPUT_FOLDER = r"D:\Haimerl\PhD\ML\Data_Unscaled"
 OUTPUT_FOLDER = r"D:\Haimerl\PhD\ML\Data_Scaled"
-NUM_CORES = max(1, int(cpu_count() * 0.01)) 
+NUM_CORES = max(1, int(cpu_count() * 0.01))   # change number to use more then one core
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
